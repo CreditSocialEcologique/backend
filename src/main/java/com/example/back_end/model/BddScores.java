@@ -1,13 +1,12 @@
 package com.example.back_end.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "scores")
 public class BddScores {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int scoreTransport;
     private int scoreEnergie;
@@ -15,6 +14,14 @@ public class BddScores {
     private int nuisanceSonore;
     private int pollutionLumineuse;
     private int finalScore;
+    private String prenom; // Ajout du champ prénom
+    private String nom; // Ajout du champ nom
+    private int age; // Ajout du champ age
+    private String dateNaissance; // Ajout du champ dateNaissance
+    private String mobile; // Ajout du champ mobile
+    private String adresse; // Ajout du champ adresse
+    private String compteBancaire; // Ajout du champ compteBancaire
+    private String positionActuelle; // Ajout du champ positionActuelle
 
     // Constructeur par défaut
     public BddScores() {
@@ -65,8 +72,6 @@ public class BddScores {
         this.id = id;
     }
 
-
-
     public void setScoreTransport(int scoreTransport) {
         this.scoreTransport = scoreTransport;
     }
@@ -91,8 +96,73 @@ public class BddScores {
         this.finalScore = finalScore;
     }
 
+    // Ajout des getters et setters pour les champs manquants
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getDateNaissance() {
+        return dateNaissance;
+    }
+
+    public void setDateNaissance(String dateNaissance) {
+        this.dateNaissance = dateNaissance;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public String getCompteBancaire() {
+        return compteBancaire;
+    }
+
+    public void setCompteBancaire(String compteBancaire) {
+        this.compteBancaire = compteBancaire;
+    }
+
+    public String getPositionActuelle() {
+        return positionActuelle;
+    }
+
+    public void setPositionActuelle(String positionActuelle) {
+        this.positionActuelle = positionActuelle;
+    }
+
     // Méthode pour calculer le finalScore
     public void calculateFinalScore() {
-        this.finalScore = this.scoreTransport + this.scoreEnergie + this.scoreAlimentation + this.nuisanceSonore + this.pollutionLumineuse;
+        this.finalScore = (this.scoreTransport + this.scoreEnergie + this.scoreAlimentation + this.nuisanceSonore + this.pollutionLumineuse)/5;
     }
 }

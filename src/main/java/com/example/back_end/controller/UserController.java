@@ -1,6 +1,5 @@
 package com.example.back_end.controller;
 
-import com.example.back_end.model.BddScores;
 import com.example.back_end.model.User;
 import com.example.back_end.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +15,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @CrossOrigin(origins = "*")
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
         List<User> users = userService.findAllUsers();
