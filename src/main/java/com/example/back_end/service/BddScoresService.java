@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 
 @Service
@@ -29,6 +30,14 @@ public class BddScoresService {
             bddScore.calculateFinalScore();
             bddScoresRepository.save(bddScore);
         }
+    }
+
+    public Optional<BddScores> getScores(int id) {
+        return bddScoresRepository.findById((long) id);
+    }
+
+    public void save(BddScores bddScores) {
+        bddScoresRepository.save(bddScores);
     }
 }
 
