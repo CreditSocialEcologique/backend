@@ -13,11 +13,9 @@ public class BddScoresController {
     @Autowired
     private BddScoresService bddScoresService;
 
-    @PostMapping("/calculate")
-    public ResponseEntity<BddScores> calculateAndSavebddScores(@RequestBody BddScores bddScores) {
-        BddScores savedScores = bddScoresService.saveBddScoresScore(bddScores);
-        return ResponseEntity.ok(savedScores);
+    @GetMapping("/update/{id}")
+    public ResponseEntity<BddScores> updateFinalScore(@PathVariable Long id) {
+        BddScores updatedScores = bddScoresService.updateFinalScore(id);
+        return ResponseEntity.ok(updatedScores);
     }
-
-    // Add more endpoints as needed
 }
