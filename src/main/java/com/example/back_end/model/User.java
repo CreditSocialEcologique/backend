@@ -15,6 +15,7 @@ public class User {
     private int scoreAlimentation;
     private int nuisanceSonore;
     private int pollutionLumineuse;
+    private int biodiversityProtectionScore;
 
 
     private String prenom;
@@ -143,5 +144,13 @@ public class User {
 
     public void setPositionActuelle(String positionActuelle) {
         this.positionActuelle = positionActuelle;
+    }
+
+    public int getBiodiversityProtectionScore() {
+        return biodiversityProtectionScore;
+    }
+
+    public void setBiodiversityProtectionScore(int biodiversityProtectionScore) {
+        this.biodiversityProtectionScore = biodiversityProtectionScore;
     }
 }
