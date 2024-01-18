@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BddScoresRepository extends JpaRepository<BddScores, Long> {
-    // Définitions des méthodes de recherche personnalisées si nécessaire
+    // Méthodes personnalisées si nécessaire...
 }
