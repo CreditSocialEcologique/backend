@@ -77,6 +77,7 @@ public class DataInitializationService {
             bddScores.setScoreAlimentation(random.nextInt(401) + 600);
             bddScores.setNuisanceSonore(random.nextInt(401) + 600);
             bddScores.setPollutionLumineuse(random.nextInt(401) + 600);
+            bddScores.setBiodiversityProtectionScore(random.nextInt(401) + 600);
             bddScores.setFinalScore(0);
             bddScores.setPrenom(getRandomPrenom());
             String nomAleatoire = NOMS.get(random.nextInt(NOMS.size()));

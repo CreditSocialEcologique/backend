@@ -13,6 +13,7 @@ public class BddScores {
     private int scoreAlimentation;
     private int nuisanceSonore;
     private int pollutionLumineuse;
+    private int biodiversityProtectionScore;
     private int finalScore;
     private String prenom; // Ajout du champ prénom
     private String nom; // Ajout du champ nom
@@ -164,5 +165,13 @@ public class BddScores {
     // Méthode pour calculer le finalScore
     public void calculateFinalScore() {
         this.finalScore = (this.scoreTransport + this.scoreEnergie + this.scoreAlimentation + this.nuisanceSonore + this.pollutionLumineuse)/5;
+    }
+
+    public int getBiodiversityProtectionScore() {
+        return biodiversityProtectionScore;
+    }
+
+    public void setBiodiversityProtectionScore(int biodiversityProtectionScore) {
+        this.biodiversityProtectionScore = biodiversityProtectionScore;
     }
 }
