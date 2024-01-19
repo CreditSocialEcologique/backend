@@ -15,6 +15,10 @@ public class StartupRunner implements CommandLineRunner {
     @Autowired
     private DataInitializationService dataInitializationService;
 
+    /**
+     * Méthode appelée au démarrage de l'application pour initialiser les données et mettre à jour les scores
+     * @param args arguments
+     */
     @Override
     public void run(String... args) {
         dataInitializationService.initializeData();

@@ -162,7 +162,10 @@ public class BddScores {
         this.positionActuelle = positionActuelle;
     }
 
-    // Méthode pour calculer le finalScore
+    /**
+     * Calcule le score final.
+     * Le score final est la moyenne des 5 autres scores.
+     */
     public void calculateFinalScore() {
         this.finalScore = (this.scoreTransport + this.scoreEnergie + this.scoreAlimentation + this.nuisanceSonore + this.pollutionLumineuse)/5;
     }

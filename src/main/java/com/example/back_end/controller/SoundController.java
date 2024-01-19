@@ -15,6 +15,11 @@ public class SoundController {
     @Autowired
     private BddScoresService bddScoresService;
 
+    /**
+     * Permet de réduire le score de nuisance sonore d'un utilisateur
+     * @param id_user id de l'utilisateur
+     * @return String "Data received" si tout s'est bien passé, "Error, user doesn't exist" si l'utilisateur n'existe pas
+     */
     @PostMapping("/api/sound/reduceScore")
     public String receiveSoundData(@RequestParam(name="id_user") int id_user) {
 

@@ -17,6 +17,11 @@ public class BddScoresService {
     @Autowired
     private BddScoresRepository bddScoresRepository;
 
+    /**
+     * Met à jour le score final d'un utilisateur
+     * @param id id de l'utilisateur
+     * @return l'utilisateur avec son score final mis à jour
+     */
     public BddScores updateFinalScore(Long id) {
         return bddScoresRepository.findById(id).map(bddScores -> {
             bddScores.calculateFinalScore();
@@ -24,6 +29,9 @@ public class BddScoresService {
         }).orElseThrow(() -> new NoSuchElementException("Score with ID " + id + " not found."));
     }
 
+    /**
+     * Met à jour le score final de tous les utilisateurs
+     */
     public void updateFinalScoreForAll() {
         List<BddScores> allScores = bddScoresRepository.findAll();
         for (BddScores bddScore : allScores) {
@@ -32,10 +40,18 @@ public class BddScoresService {
         }
     }
 
+    /**
+     * Récupère le score d'un utilisateur
+     * @param id id de l'utilisateur
+     * @return l'utilisateur avec son score
+     */
     public Optional<BddScores> getScores(int id) {
         return bddScoresRepository.findById((long) id);
     }
-
+    /**
+     * Enregistre le score d'un utilisateur
+     * @param bddScores score de l'utilisateur
+     */
     public void save(BddScores bddScores) {
         bddScoresRepository.save(bddScores);
     }

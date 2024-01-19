@@ -19,6 +19,7 @@ public class DataInitializationService {
     // Liste de villes françaises
     private final String[] villes = {"Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Nantes", "Strasbourg", "Montpellier", "Bordeaux", "Lille"};
 
+    // Liste de prénoms français
     private static final String[] prenoms = {
             "Roger", "Fabre", "Aubert", "Lemoine", "Renaud", "Dumas", "Lacroix", "Olivier", "Philippe", "Bourgeois",
             "Pierre", "Benoit", "Rey", "Leclerc", "Payet", "Rolland", "Leclercq", "Guillaume", "Lecomte", "Lopez",
@@ -34,6 +35,7 @@ public class DataInitializationService {
             "Cordier", "Pichon", "Lejeune", "Gilbert", "Lamy", "Delaunay", "Pasquier", "Carlier", "Laporte"
     };
 
+    // Liste de noms français
     private static final List<String> NOMS = Arrays.asList(
             "Martin", "Bernard", "Thomas", "Petit", "Robert",
             "Richard", "Durand", "Dubois", "Moreau", "Laurent",
@@ -57,16 +59,20 @@ public class DataInitializationService {
             "Payet", "Rolland", "Leclercq", "Guillaume", "Lecomte"
     );
 
+    // Liste de banques
     private static final String[] banques = {
             "société générale", "bnp paribas", "LCL", "banque postale", "crédit agricole"
     };
 
-
+    // Liste de dates de naissance
     private static final String[] datesNaissance = {
             "01-01-1980", "15-06-1990", "05-03-1975", "20-11-1988", "10-09-1995", "25-12-1982", "30-07-1993", "18-04-1987", "08-10-1992", "12-09-1984"
 
     };
 
+    /**
+     * Initialise la base de données avec des données aléatoires
+     */
     @PostConstruct
     public void initializeData() {
         Random random = new Random();
@@ -93,23 +99,39 @@ public class DataInitializationService {
         }
     }
 
+    /**
+     * Récupère une ville aléatoire
+     * @return une ville aléatoire
+     */
     private String getRandomVille() {
         Random random = new Random();
         return villes[random.nextInt(villes.length)];
     }
 
+    /**
+     * Récupère un prénom aléatoire
+     * @return un prénom aléatoire
+     */
     private String getRandomPrenom() {
         Random random = new Random();
         int index = random.nextInt(prenoms.length);
         return prenoms[index];
     }
 
+    /**
+     * Récupère une date de naissance aléatoire
+     * @return une date de naissance aléatoire
+     */
     private String getRandomDateOfBirth() {
         Random random = new Random();
         int index = random.nextInt(datesNaissance.length);
         return datesNaissance[index];
     }
 
+    /**
+     * Récupère un numéro de compte bancaire aléatoire
+     * @return un numéro de compte bancaire aléatoire
+     */
     private String getBankAcc() {
         Random random = new Random();
         int index = random.nextInt(banques.length);

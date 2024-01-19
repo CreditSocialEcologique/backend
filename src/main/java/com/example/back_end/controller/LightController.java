@@ -15,6 +15,11 @@ public class LightController {
     @Autowired
     private BddScoresService bddScoresService;
 
+    /**
+     * Permet de réduire le score de pollution lumineuse d'un utilisateur
+     * @param id_user id de l'utilisateur
+     * @return String "Data received" si tout s'est bien passé, "Error, user doesn't exist" si l'utilisateur n'existe pas
+     */
     @PostMapping("/api/light/reduceScore")
     public String receiveLightData(@RequestParam(name="id_user") int id_user) {
 

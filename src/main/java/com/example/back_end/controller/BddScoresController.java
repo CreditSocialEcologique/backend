@@ -13,6 +13,11 @@ public class BddScoresController {
     @Autowired
     private BddScoresService bddScoresService;
 
+    /**
+     * Update the final score of a user
+     * @param id the id of the user
+     * @return the updated user
+     */
     @GetMapping("/update/{id}")
     public ResponseEntity<BddScores> updateFinalScore(@PathVariable Long id) {
         BddScores updatedScores = bddScoresService.updateFinalScore(id);

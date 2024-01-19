@@ -15,6 +15,10 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    /**
+     * Permet de récupérer tous les utilisateurs
+     * @return la liste de tous les utilisateurs
+     */
     @CrossOrigin(origins = "*")
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
@@ -22,12 +26,23 @@ public class UserController {
         return ResponseEntity.ok(users);
     }
 
+    /**
+     * Récupérer un utilisateur
+     * @param id id de l'utilisateur
+     * @return l'utilisateur
+     */
     @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
         User user = userService.findUserById(id);
         return ResponseEntity.ok(user);
     }
 
+    /**
+     * Met à jour un utilisateur
+     * @param newUser
+     * @param id
+     * @return
+     */
     @PutMapping("update/{id}")
     public ResponseEntity<User> updateUser(@RequestBody User newUser, @PathVariable Long id) {
         User updatedUser = userService.findUserById(id);
