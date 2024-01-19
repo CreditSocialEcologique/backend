@@ -1,4 +1,6 @@
-Pour éxécuter le projet, il est possible de l'éxécuter avec docker ou avec un ide.
+# Backend
+
+Pour éxécuter le projet, il est possible de l'éxécuter avec docker, un ide java ou maven.
 
 ## Docker
 
